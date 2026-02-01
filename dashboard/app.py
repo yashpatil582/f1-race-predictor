@@ -73,18 +73,25 @@ def load_predictor():
     return predictor, collector
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=86400)  # Cache for 24 hours
 def get_schedule(year: int):
     """Get race schedule for a year."""
     collector = F1DataCollector()
     return collector.get_schedule(year)
 
 
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=86400)  # Cache for 24 hours
 def collect_race_data(year: int, round_number: int):
     """Collect race data."""
     collector = F1DataCollector()
     return collector.collect_race_data(year, round_number)
+
+
+@st.cache_data(ttl=86400)  # Cache for 24 hours
+def collect_season_data(year: int):
+    """Collect full season data - cached."""
+    collector = F1DataCollector()
+    return collector.collect_season_data(year)
 
 
 def main():
@@ -133,7 +140,7 @@ def show_prediction_page(predictor: RacePredictor, collector: F1DataCollector):
             st.error("Model not trained. Please train the model first.")
             return
 
-        with st.spinner("Generating predictions..."):
+        with st.spinner("Loading race data... (this may take a moment on first load)"):
             try:
                 # Collect race data
                 race_data = collect_race_data(year, round_number)
@@ -142,23 +149,31 @@ def show_prediction_page(predictor: RacePredictor, collector: F1DataCollector):
                     st.error("Could not load race data")
                     return
 
-                # Get historical data
+                # Get historical data - only same year to speed up
+                st.info("Loading historical data for predictions...")
                 historical = []
-                for y in range(year - 2, year + 1):
+                try:
+                    season_data = collect_season_data(year)
+                    historical.extend(season_data)
+                except Exception:
+                    pass
+
+                # Only get previous year if we need more data
+                if len(historical) < 5:
                     try:
-                        season_data = collector.collect_season_data(y)
-                        historical.extend(season_data)
+                        prev_season = collect_season_data(year - 1)
+                        historical.extend(prev_season)
                     except Exception:
-                        continue
+                        pass
 
                 historical = [
                     r for r in historical
                     if r.year < year or (r.year == year and r.round_number < round_number)
                 ]
 
-                if len(historical) < 5:
-                    st.error("Insufficient historical data for prediction")
-                    return
+                if len(historical) < 3:
+                    st.warning("Limited historical data - predictions may be less accurate")
+                    # Continue anyway with available data
 
                 # Make prediction
                 prediction = predictor.predict_race(race_data, historical)
