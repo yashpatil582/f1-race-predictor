@@ -6,6 +6,10 @@ A Python application for visualizing Formula 1 race telemetry, replaying race ev
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
+## Demo
+
+![ML Predictor Demo](./resources/demo.gif)
+
 ![Race Replay Preview](./resources/preview.png)
 
 ## Features
