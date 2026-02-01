@@ -1,8 +1,11 @@
 """
 Streamlit Cloud entry point.
-Redirects to the main dashboard app.
 """
-from dashboard.app import *
+import sys
+import os
 
-if __name__ == "__main__":
-    pass
+# Add project root to path for imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+# Now import and run the dashboard
+from dashboard.app import *
