@@ -117,7 +117,7 @@ def show_prediction_page(predictor: RacePredictor, collector: F1DataCollector):
     col1, col2 = st.columns(2)
 
     with col1:
-        year = st.selectbox("Select Year", [2024, 2023, 2022], index=0)
+        year = st.selectbox("Select Year", [2025, 2024, 2023, 2022], index=0)
 
     with col2:
         schedule = get_schedule(year)
@@ -284,7 +284,7 @@ def show_historical_page(predictor: RacePredictor, collector: F1DataCollector):
         st.warning("Model not trained. Please train the model first.")
         return
 
-    year = st.selectbox("Select Year to Analyze", [2024, 2023], index=0)
+    year = st.selectbox("Select Year to Analyze", [2025, 2024, 2023], index=0)
 
     if st.button("Analyze Season", type="primary"):
         with st.spinner(f"Analyzing {year} season..."):
@@ -462,7 +462,7 @@ def show_training_page(predictor: RacePredictor, collector: F1DataCollector):
 
     training_years = st.multiselect(
         "Select Training Years",
-        [2022, 2023, 2024],
+        [2022, 2023, 2024, 2025],
         default=[2022, 2023]
     )
 
