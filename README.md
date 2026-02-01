@@ -2,7 +2,7 @@
 
 A Python application for visualizing Formula 1 race telemetry, replaying race events, and **predicting race outcomes using machine learning**.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit)](https://f1-race-predictor-m6nlxsm6upaxb6bvq36leb.streamlit.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit)](https://f1-race-predictor-ekuc9y7ovzkeuymxjfys4i.streamlit.app)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
