@@ -28,8 +28,8 @@ A Python application for visualizing Formula 1 race telemetry, replaying race ev
 
 ```bash
 # Clone the repository
-git clone https://github.com/yashpatil582/f1-race-replay
-cd f1-race-replay
+git clone https://github.com/yashpatil582/f1-race-predictor.git
+cd f1-race-predictor
 
 # Create virtual environment
 python3 -m venv venv
