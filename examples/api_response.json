@@ -1,0 +1,25 @@
+{
+  "description": "Example API response from GET /predict/2024/1",
+  "endpoint": "/predict/{year}/{round}",
+  "method": "GET",
+  "response": {
+    "success": true,
+    "race": {
+      "year": 2024,
+      "round": 1,
+      "name": "Bahrain Grand Prix",
+      "circuit": "Bahrain International Circuit"
+    },
+    "predictions": [
+      {"position": 1, "driver": "VER", "team": "Red Bull Racing", "probability": 0.68},
+      {"position": 2, "driver": "LEC", "team": "Ferrari", "probability": 0.41},
+      {"position": 3, "driver": "SAI", "team": "Ferrari", "probability": 0.35},
+      {"position": 4, "driver": "PER", "team": "Red Bull Racing", "probability": 0.32},
+      {"position": 5, "driver": "RUS", "team": "Mercedes", "probability": 0.30}
+    ],
+    "model_info": {
+      "mae": 4.06,
+      "confidence": 72.5
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "event_name": "Bahrain Grand Prix",
+  "year": 2024,
+  "round": 1,
+  "model_confidence": 72.5,
+  "predictions": [
+    {
+      "driver_code": "VER",
+      "team": "Red Bull Racing",
+      "grid_position": 1,
+      "predicted_position": 1.2,
+      "confidence_interval": [1, 2],
+      "position_probabilities": {
+        "1": 0.68,
+        "2": 0.22,
+        "3": 0.07,
+        "4": 0.02,
+        "5": 0.01
+      }
+    },
+    {
+      "driver_code": "LEC",
+      "team": "Ferrari",
+      "grid_position": 2,
+      "predicted_position": 2.8,
+      "confidence_interval": [2, 4],
+      "position_probabilities": {
+        "1": 0.12,
+        "2": 0.41,
+        "3": 0.28,
+        "4": 0.13,
+        "5": 0.06
+      }
+    },
+    {
+      "driver_code": "SAI",
+      "team": "Ferrari",
+      "grid_position": 3,
+      "predicted_position": 3.5,
+      "confidence_interval": [2, 5],
+      "position_probabilities": {
+        "1": 0.05,
+        "2": 0.18,
+        "3": 0.35,
+        "4": 0.27,
+        "5": 0.15
+      }
+    },
+    {
+      "driver_code": "PER",
+      "team": "Red Bull Racing",
+      "grid_position": 4,
+      "predicted_position": 4.1,
+      "confidence_interval": [3, 6],
+      "position_probabilities": {
+        "1": 0.03,
+        "2": 0.12,
+        "3": 0.25,
+        "4": 0.32,
+        "5": 0.18
+      }
+    },
+    {
+      "driver_code": "RUS",
+      "team": "Mercedes",
+      "grid_position": 5,
+      "predicted_position": 5.3,
+      "confidence_interval": [4, 7],
+      "position_probabilities": {
+        "1": 0.01,
+        "2": 0.06,
+        "3": 0.15,
+        "4": 0.28,
+        "5": 0.30
+      }
+    }
+  ],
+  "metadata": {
+    "model_version": "1.0.0",
+    "features_used": 31,
+    "training_races": 44,
+    "validation_mae": 4.06
+  }
+}

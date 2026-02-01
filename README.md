@@ -2,6 +2,10 @@
 
 A Python application for visualizing Formula 1 race telemetry, replaying race events, and **predicting race outcomes using machine learning**.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit)](https://f1-race-predictor-m6nlxsm6upaxb6bvq36leb.streamlit.app)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
+
 ![Race Replay Preview](./resources/preview.png)
 
 ## Features
@@ -105,6 +109,25 @@ streamlit run dashboard/app.py
 - **Training Data:** 2023 season (22 races)
 - **Model Type:** XGBoost Regressor
 
+## Sample Prediction Output
+
+```json
+{
+  "driver_code": "VER",
+  "team": "Red Bull Racing",
+  "grid_position": 1,
+  "predicted_position": 1.2,
+  "confidence_interval": [1, 2],
+  "position_probabilities": {
+    "1": 0.68,
+    "2": 0.22,
+    "3": 0.07
+  }
+}
+```
+
+See [`examples/`](./examples/) for full API response samples.
+
 ## API Endpoints
 
 | Endpoint | Method | Description |
@@ -161,6 +184,7 @@ f1-race-replay/
 |   +-- lib/                   # Utilities
 |
 +-- models/                    # Trained models (gitignored)
++-- examples/                  # Sample JSON outputs
 +-- resources/                 # Preview images
 +-- images/                    # UI assets
 ```
